@@ -1,6 +1,7 @@
 package pro.sky.registry.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import pro.sky.registry.entity.Doctor;
 
-public class DoctorRepository implements JpaRepository() {
+public interface DoctorRepository extends JpaRepository<Doctor, Integer> {
 }

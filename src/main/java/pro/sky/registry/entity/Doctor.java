@@ -1,10 +1,11 @@
 package pro.sky.registry.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Objects;
 import java.util.UUID;
-
+@Data
 @Entity
 public class Doctor {
         @Id
@@ -28,51 +29,6 @@ public class Doctor {
         }
 
         public Doctor() {}
-
-        public int getId() {
-                return id;
-        }
-
-        public UUID getUuid() {
-                return uuid;
-        }
-
-        public String getFirstName() {
-                return firstName;
-        }
-
-        public void setFirstName(String firstName) {
-                this.firstName = firstName;
-        }
-
-        public String getLastName() {
-                return lastName;
-        }
-
-        public void setLastName(String lastName) {
-                this.lastName = lastName;
-        }
-
-        public String getSpeciality() {
-                return speciality;
-        }
-
-        public void setSpeciality(String speciality) {
-                this.speciality = speciality;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-                if (this == o) return true;
-                if (o == null || getClass() != o.getClass()) return false;
-                Doctor doctor = (Doctor) o;
-                return id == doctor.id && uuid.equals(doctor.uuid) && firstName.equals(doctor.firstName) && lastName.equals(doctor.lastName) && speciality.equals(doctor.speciality);
-        }
-
-        @Override
-        public int hashCode() {
-                return Objects.hash(id, uuid, firstName, lastName, speciality);
-        }
 
         @Override
         public String toString() {
