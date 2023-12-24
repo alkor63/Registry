@@ -1,43 +1,45 @@
 package pro.sky.registry.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-import java.util.Objects;
-import java.util.UUID;
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
 @Entity
 public class Doctor {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         @Column(name = "id",  nullable = false)
         private int id;
-
-        private UUID uuid;
+//        ID	счетчик	Идентификатор врача
+//        Фамилия	текстовый	Фамилия врача
+//        Имя	текстовый	Имя врача
+//        Отчество	текстовый	Отчество врача
+//        Специальность	Текстовый	Специальность врача
+//        Место работы	Текстовый	Отделение, в  котором работает врач
+//        Кабинет	Числовой	Номер кабинета врача
 
         private String firstName;
+        private String secondName;
 
         private String lastName;
 
         private String speciality;
-
-        public Doctor(String firstName, String lastName, String speciality) {
-                this.uuid = UUID.randomUUID();//generate random UUIDs
-                this.firstName = firstName;
-                this.lastName = lastName;
-                this.speciality = speciality;
-        }
-
-        public Doctor() {}
+        private int cabinet;
 
         @Override
         public String toString() {
                 return "Doctor{" +
                         "id=" + id +
-                        ", uuid=" + uuid +
                         ", firstName='" + firstName + '\'' +
+                        ", secondName='" + secondName + '\'' +
                         ", lastName='" + lastName + '\'' +
                         ", speciality='" + speciality + '\'' +
+                        ", cabinet=" + cabinet +
                         '}';
         }
 }

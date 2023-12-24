@@ -1,4 +1,4 @@
 package pro.sky.registry.service;
 
-public class PatientService {
+public interface PatientService {
 }
