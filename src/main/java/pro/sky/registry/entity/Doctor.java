@@ -1,7 +1,8 @@
 package pro.sky.registry.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
+
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor

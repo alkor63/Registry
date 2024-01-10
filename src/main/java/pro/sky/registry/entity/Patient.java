@@ -1,8 +1,9 @@
 package pro.sky.registry.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
+import javax.persistence.Entity;
 import java.util.Date;
 import java.util.Objects;
 import java.util.UUID;
@@ -29,7 +30,7 @@ public class Patient {
         this.uuid = UUID.randomUUID();//generate random UUIDs
     }
     public Patient() {  }
-    
+
     @Override
     public int hashCode() {
         return Objects.hash(id, uuid, firstName, lastName, birthday);
